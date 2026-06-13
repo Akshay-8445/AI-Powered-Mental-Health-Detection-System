@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindEase - Your Mental Health Companion</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-brand">MindEase</div>
+        <ul>
+            <li>Home</li>
+            <li>Resources</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+
+    <!-- Center Content -->
+    <section class="center-content">
+        <h2>Your Mental Health Companion</h2>
+        <p>
+            MindEase is here to support your emotional well-being. Whether you're feeling overwhelmed, anxious,
+            or just need someone to talk to, our chatbot is designed to provide a safe and supportive space for you.
+            We offer personalised coping strategies, mindfulness exercises, and access to mental health resources.
+            Remember, you're not alone on this journey.
+        </p>
+    </section>
+
+    <!-- Chat Icon -->
+    <!-- FIX: class was "chat-icon" but CSS defines ".chat-icon" correctly; kept -->
+    <div class="chat-icon" onclick="toggleChat()">💭</div>
+
+    <!-- Chat Widget -->
+    <!-- FIX: class was "chat-widgth" (typo) → "chat-widget" to match CSS -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header">
+            MindEase Chatbot
+            <span style="cursor:pointer;" onclick="toggleChat()">✖</span>
+        </div>
+        <div class="chat-body" id="chatBody"></div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Type your message here..."
+                   onkeydown="if(event.key==='Enter') sendMessage()">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <!-- FIX: removed inline script that had `${test}` (undefined variable) bug.
+              All logic now lives in chatbot.js.
+         FIX: script tag was `script.js` (wrong filename) → `chatbot.js` -->
+    <script src="chatbot.js"></script>
+</body>
+</html>
